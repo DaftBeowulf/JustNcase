@@ -6,7 +6,7 @@ const helmet = require('helmet')
 
 module.exports = server => {
   require('dotenv').config()
-  server.use(helmet)
+  server.use(helmet())
   server.use(morgan('dev'))
   server.use(express.json())
 }
