@@ -3,8 +3,8 @@ require("dotenv").config();
 const router = require("express").Router();
 const accountSid = process.env.ACCOUNT_SID || "not authorized";
 const authToken = process.env.AUTH_TOKEN || "not authorized";
-const twilioPhone = process.env.TWILIO_PHONE || "+15125938765";
-const contactPhone = process.env.CONTACT_PHONE || "+16827030985";
+const twilioPhone = process.env.TWILIO_PHONE;
+const contactPhone = process.env.CONTACT_PHONE;
 const client = require("twilio")(accountSid, authToken);
 
 const Users = require("../models/User");
@@ -43,6 +43,7 @@ router.get("/start/:_id", async (req, res) => {
   const interval = event.checkinInterval;
   const duration = event.eventDuration;
   console.log("Event:", event);
+
   let count = 0;
 
   const timer = setInterval(async () => {
