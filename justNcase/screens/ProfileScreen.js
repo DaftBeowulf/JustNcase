@@ -1,4 +1,4 @@
-import react from 'react';
+import * as React from 'react';
 import {
     Image,
     Platform,
@@ -10,11 +10,33 @@ import {
 } from 'react-native';
 
 export default class ProfileScreen extends React.Component{
-    static navigationOptions = { header: 'Profile'};
+    static navigationOptions = { title: 'Your Profile'};
+    constructor(props){
+        super(props);
+        this.setState({
+            name: '',
+            email:'',
+            ICEcontats: [],
+        })
+    }
+    
+    
 
     render(){
         return (
-            <View></View>
+            <View style={styles.container}>
+            <View>
+                <Text>Hello world</Text>
+            </View>
+            </View>
+           
         )
     }
-}
+};
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#dcffcc',
+        alignItems: 'center',
+    }
+})
