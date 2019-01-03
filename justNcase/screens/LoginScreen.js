@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 import FloatingLabel from '../screens/FloatingLabel';
+import LoginButton from '../components/LoginButton';
 
 export default class LoginScreen extends React.Component {
   render() {
@@ -11,25 +12,30 @@ export default class LoginScreen extends React.Component {
       //     into the editor Hello
       //   </Text>
       // </View>
+      // {/* <View style={styles.logoBox} />
+      //   <View style={styles.username} />
+      //   <View style={styles.password} />
+      //   <View style={styles.login} />
+      //   <View style={styles.secondarySignIn2} />
+      //   <View style={styles.secondarySignIn1} />
+      //   <Text>Login</Text>
+      //   <Text>Sign in with Facebook</Text>
+      //   <Text>Sign in with Google</Text>
+      //   <Text>Forgot Username?</Text>
+      //   <Text>Forgot Password?</Text>
+      //   <Text>Create an Account</Text>
+      //   <Text>ABOUT | CONTACT</Text> */}
+      <ScrollView>
       <View style={styles.overall}>
-      <FloatingLabel style={styles.form} />
-      <Text>
-      <Image source={require('../assets/images/LoginButton.png')} style={styles.LoginButton} />
-      </Text>
-        {/* <View style={styles.logoBox} />
-        <View style={styles.username} />
-        <View style={styles.password} />
-        <View style={styles.login} />
-        <View style={styles.secondarySignIn2} />
-        <View style={styles.secondarySignIn1} />
-        <Text>Login</Text>
-        <Text>Sign in with Facebook</Text>
-        <Text>Sign in with Google</Text>
-        <Text>Forgot Username?</Text>
-        <Text>Forgot Password?</Text>
-        <Text>Create an Account</Text>
-        <Text>ABOUT | CONTACT</Text> */}
+      <View>
+      <FloatingLabel style={styles.form} style={{resizeMode:'contain'}}/>
+      <LoginButton  style={styles.LoginButton}/>
       </View>
+      <Image source={require('../assets/images/google.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+      <Image source={require('../assets/images/Facebook.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+      <Image source={require('../assets/images/oval.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+      </View>
+      </ScrollView>
     );
   }
 }
@@ -48,6 +54,13 @@ const styles = StyleSheet.create({
   //   textAlign: 'center',
   //   color: 'red',
   // },
+  overall:{
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    alignItems:'stretch',
+  },
   secondarySignIn1: {
     height: 30,
     width: 140,
@@ -83,21 +96,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'steelblue',
     borderRadius: 1,
   },
-  overall:{
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    alignItems:'stretch',
-  },
   form:{
     flex: 3,
     alignItems: 'stretch',
     position:'relative',
   },
   LoginButton:{
-    height:50,
-    width:200,
+   color: '#58CF8F',
+   
   }
 
   // logo: {
