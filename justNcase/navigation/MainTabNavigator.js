@@ -53,6 +53,12 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+const ProfileStack = createStackNavigator({
+  Profile: ProfileScreen,
+});
+
+
+
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
