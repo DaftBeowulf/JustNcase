@@ -54,7 +54,7 @@ router.put("/:_id", (req, res) => {
         console.log(err);
         res.end();
       } else {
-        res.json(user);
+        res.redirect(`/timer/start/${req.params._id}`);
       }
     }
   );
