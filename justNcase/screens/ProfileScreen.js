@@ -6,7 +6,7 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
 } from 'react-native';
 import axios from 'axios';
 
@@ -14,31 +14,36 @@ export default class ProfileScreen extends React.Component{
     static navigationOptions = { title: 'Your Profile'};
     constructor(props){
         super(props);
-        this.setState({
-            name: '',
-            email:'',
-            ICEcontats: [],
+        this.state={
+           user:{}
+        }
+    }
+    componentDidMount=()=>{
+        axios.get('https://justncase.now.sh/user/lambdajoe')
+        .then(response=>{
+            this.setState({
+                user: response.data
+            })
+            .catch(err=>{
+                console.log
+            })
         })
     }
-    // componentDidMount{
-    //     axios.get().then(user=>{
-
-    //     })
-    // }
 
     render(){
         return (
             <View style={styles.container}>
             <View style={{backgroundColor: '#1EB865', width: '100%',}}>
-                <Text style={styles.userText}>Lambda Joe</Text>
-                
+                <Text style={styles.userText}>{this.state.user.username}</Text>
             </View>
-            <Text>
-                Emergancey Contacts
-            </Text>
-            <Text>
-                Manage List
-            </Text>
+            <View syle={{flex: 1, flexDirection:'row'}}>
+                <Text>
+                    Emergency Contacts
+                </Text>
+                <Text>
+                    Manage List
+                </Text>
+            </View>
             </View>
            
         )
@@ -50,10 +55,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#dcffcc',
         alignItems: 'center',
         flex:1,
-    },
-    userCard:{
-        backgroundColor: '#1EB865',
-        flex: 2,
     },
     userText:{
         fontSize: 22,
