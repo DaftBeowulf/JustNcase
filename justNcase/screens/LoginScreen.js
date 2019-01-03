@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import FloatingLabel from '../screens/FloatingLabel';
+// import LoginButton from '../components/LoginButton';
 
 export default class LoginScreen extends React.Component {
   render() {
@@ -10,8 +12,21 @@ export default class LoginScreen extends React.Component {
       //     into the editor Hello
       //   </Text>
       // </View>
+      <ScrollView>
       <View style={styles.overall}>
-        <View style={styles.logoBox} />
+
+      <View style={styles.first}>
+        <Text style={styles.logoBox}> JUST 'n CASE </Text>
+        <FloatingLabel style={styles.form} style={{resizeMode:'contain', height:'10%',}}/>
+        {/* <LoginButton  style={styles.LoginButton} style={{resizeMode:'contain',}}/> */}
+      </View>
+
+      <View style={styles.second}>
+      <Image source={require('../assets/png_icons/google.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+      <Image source={require('../assets/png_icons/Facebook.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+      <Image source={require('../assets/png_icons/oval.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+
+     
         <View style={styles.username} />
         <View style={styles.password} />
         <View style={styles.login} />
@@ -23,8 +38,11 @@ export default class LoginScreen extends React.Component {
         <Text>Forgot Username?</Text>
         <Text>Forgot Password?</Text>
         <Text>Create an Account</Text>
-        <Text>ABOUT | CONTACT</Text>
+        <Text>ABOUT | CONTACT</Text> 
+        </View>
+
       </View>
+      </ScrollView>
     );
   }
 }
@@ -43,6 +61,22 @@ const styles = StyleSheet.create({
   //   textAlign: 'center',
   //   color: 'red',
   // },
+  overall:{
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    alignItems:'stretch',
+  },
+  first:{
+    flex:2,
+    backgroundColor:'white',
+    height:400,
+  },
+  second:{
+    flex:3,
+    backgroundColor:'#58CF8F',
+  },
   secondarySignIn1: {
     height: 30,
     width: 140,
@@ -74,15 +108,26 @@ const styles = StyleSheet.create({
     borderRadius: 1,
   },
   logoBox: {
-    height: 100,
-    backgroundColor: 'steelblue',
-    borderRadius: 1,
+    height: 80,
+    backgroundColor: '#58CF8F',
+    borderRadius: 10,
+    justifyContent: 'center',
+    fontFamily: 'Chalkduster',
+    textDecorationLine: 'underline',
+    color: 'white',
+    fontSize:'35',
+    marginLeft:10,
+    marginRight:10,
+    marginTop:10,
   },
-  overall:{
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  form:{
+    flex: 3,
+    alignItems: 'stretch',
+    position:'relative',
+  },
+  LoginButton:{
+   color: '#58CF8F',
+   
   }
 
   // logo: {
