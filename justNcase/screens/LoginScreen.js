@@ -14,11 +14,14 @@ export default class LoginScreen extends React.Component {
       // </View>
       <ScrollView>
       <View style={styles.overall}>
-      <Text style={styles.logoBox}> JUST 'n CASE </Text>
-      <View>
-      <FloatingLabel style={styles.form} style={{resizeMode:'contain'}}/>
-      <LoginButton  style={styles.LoginButton}/>
+
+      <View style={styles.first}>
+        <Text style={styles.logoBox}> JUST 'n CASE </Text>
+        <FloatingLabel style={styles.form} style={{resizeMode:'contain', height:'10%',}}/>
+        {/* <LoginButton  style={styles.LoginButton} style={{resizeMode:'contain',}}/> */}
       </View>
+
+      <View style={styles.second}>
       <Image source={require('../assets/images/google.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
       <Image source={require('../assets/images/Facebook.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
       <Image source={require('../assets/images/oval.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
@@ -36,6 +39,8 @@ export default class LoginScreen extends React.Component {
         <Text>Forgot Password?</Text>
         <Text>Create an Account</Text>
         <Text>ABOUT | CONTACT</Text> 
+        </View>
+
       </View>
       </ScrollView>
     );
@@ -62,6 +67,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     alignItems:'stretch',
+  },
+  first:{
+    flex:2,
+    backgroundColor:'white',
+    height:400,
+  },
+  second:{
+    flex:3,
+    backgroundColor:'#58CF8F',
   },
   secondarySignIn1: {
     height: 30,
@@ -96,7 +110,7 @@ const styles = StyleSheet.create({
   logoBox: {
     height: 80,
     backgroundColor: '#58CF8F',
-    borderRadius: 20,
+    borderRadius: 10,
     justifyContent: 'center',
     fontFamily: 'Chalkduster',
     textDecorationLine: 'underline',
@@ -104,6 +118,7 @@ const styles = StyleSheet.create({
     fontSize:'35',
     marginLeft:10,
     marginRight:10,
+    marginTop:10,
   },
   form:{
     flex: 3,
