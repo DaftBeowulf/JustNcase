@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const router = require("express").Router();
 const accountSid = process.env.ACCOUNT_SID || "not authorized";
-const authToken = process.env.AUTH_TOKEN || "not authorized";
+const authToken = process.env.TWILIO_TOKEN || "not authorized";
 const twilioPhone = process.env.TWILIO_PHONE;
 const contactPhone = process.env.CONTACT_PHONE;
 const client = require("twilio")(accountSid, authToken);
