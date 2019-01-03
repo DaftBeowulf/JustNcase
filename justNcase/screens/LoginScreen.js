@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
+import FloatingLabel from '../screens/FloatingLabel';
 
 export default class LoginScreen extends React.Component {
   render() {
@@ -11,7 +12,11 @@ export default class LoginScreen extends React.Component {
       //   </Text>
       // </View>
       <View style={styles.overall}>
-        <View style={styles.logoBox} />
+      <FloatingLabel style={styles.form} />
+      <Text>
+      <Image source={require('../assets/images/LoginButton.png')} style={styles.LoginButton} />
+      </Text>
+        {/* <View style={styles.logoBox} />
         <View style={styles.username} />
         <View style={styles.password} />
         <View style={styles.login} />
@@ -23,7 +28,7 @@ export default class LoginScreen extends React.Component {
         <Text>Forgot Username?</Text>
         <Text>Forgot Password?</Text>
         <Text>Create an Account</Text>
-        <Text>ABOUT | CONTACT</Text>
+        <Text>ABOUT | CONTACT</Text> */}
       </View>
     );
   }
@@ -83,6 +88,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
+    alignItems:'stretch',
+  },
+  form:{
+    flex: 3,
+    alignItems: 'stretch',
+    position:'relative',
+  },
+  LoginButton:{
+    height:50,
+    width:200,
   }
 
   // logo: {
