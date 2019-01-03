@@ -26,6 +26,24 @@ HomeStack.navigationOptions = {
   ),
 };
 
+const Test = createStackNavigator({
+  Home: HomeScreen,
+});
+
+HomeStack.navigationOptions = {
+  tabBarLabel: 'Test',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-information-circle${focused ? '' : '-outline'}`
+          : 'md-information-circle'
+      }
+    />
+  ),
+};
+
 const HomePage = createStackNavigator({
   Home: Home,
 });
@@ -76,4 +94,5 @@ export default createBottomTabNavigator({
   Home,
   LinksStack,
   SettingsStack,
+  Test,
 });
