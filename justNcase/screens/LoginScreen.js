@@ -16,7 +16,7 @@ export default class LoginScreen extends React.Component {
       <View style={styles.overall}>
 
       <View style={styles.first}>
-      <Image source={require('../assets/png_icons/logo.png')} style={{aspectRatio: 1.5, resizeMode:'contain', marginLeft:15, marginTop:-35, marginBottom:-55}}/>
+      <Image source={require('../assets/png_icons/logo.png')} style={{aspectRatio: 1.5, resizeMode:'contain', marginLeft:20, marginTop:-35, marginBottom:-55}}/>
         {/* <Text style={styles.logoBox}> JUST 'n CASE </Text> */}
         <FloatingLabel style={styles.form} style={{resizeMode:'contain', height:'10%', marginTop:-425}}/>
         {/* <LoginButton  style={styles.LoginButton} style={{resizeMode:'contain',}}/> */}
@@ -30,7 +30,7 @@ export default class LoginScreen extends React.Component {
       <Image source={require('../assets/png_icons/LoginButton.png')} style={{aspectRatio:1.5, resizeMode:'contain', marginLeft:85, marginTop: -15}}/>
       <Image source={require('../assets/png_icons/google.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:75, marginTop:80}}/>
       <Image source={require('../assets/png_icons/Facebook.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:75, marginTop:-10}}/>
-      <Image source={require('../assets/png_icons/oval.png')} style={{aspectRatio:1.5, resizeMode:'contain', marginLeft:85, marginTop: -235}}/>
+      <Image source={require('../assets/png_icons/oval.png')} style={{aspectRatio:.8, resizeMode:'contain', marginLeft:125, marginTop: -235}}/>
       <Text style={{color:'white', marginTop:140, marginLeft:95, fontSize:15}}>Create an Account</Text>
       <View style={{borderBottomColor:'white', borderBottomWidth:1, paddingTop:5, paddingBottom:10}}></View>
       <Text style={{color:'white', marginLeft:95, paddingTop:20, fontSize:15}}>ABOUT | CONTACT</Text>
