@@ -44,8 +44,25 @@ router.post("/", (req, res) => {
   });
 });
 
-// edit user by id
+// edit user without starting an event
 router.put("/:_id", (req, res) => {
+  Users.findByIdAndUpdate(
+    req.params._id,
+    { ...req.body },
+    { new: true },
+    (err, user) => {
+      if (err) {
+        console.log(err);
+        res.end();
+      } else {
+        res.json(user);
+      }
+    }
+  );
+});
+
+// start event by editing user by id
+router.put("/event/:_id", (req, res) => {
   Users.findByIdAndUpdate(
     req.params._id,
     { ...req.body },

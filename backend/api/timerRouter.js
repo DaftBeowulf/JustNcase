@@ -13,27 +13,50 @@ router.get("/start/:_id", async (req, res) => {
       console.log(err);
       res.end();
     } else {
-      console.log(user);
+      //   console.log(user);
       res.json(user);
     }
   });
 
-  const event = user.events[0];
+  const event = user.events;
   const interval = event.checkinInterval;
   const duration = event.eventDuration;
   console.log("Event:", event);
-  console.log("Interval: ", interval);
   let count = 0;
 
-  const timer = setInterval(() => {
+  const timer = setInterval(async () => {
+    let userCheck = await Users.findById(
+      req.params._id,
+      "events",
+      (err, user) => {
+        if (err) {
+          console.log(err);
+          res.end();
+        } else {
+          console.log("Checkin block");
+          // res.json(user);
+        }
+      }
+    );
+
     count++;
-    if (count === duration / interval || event.checkedIn) {
-      if (event.checkedIn) {
+    if (count === duration / interval || userCheck.events.checkedIn) {
+      if (userCheck.events.checkedIn) {
         console.log("checked in");
-        // clearInterval(timer);
-        // timer;
-        //   timer(intervalFunc(interval, duration), interval);
-        Users.findByIdAndUpdate(user._id, { ...event, checkedIn: false });
+        Users.findByIdAndUpdate(
+          req.params._id,
+          {
+            events: { ...event, checkedIn: false }
+          },
+          { new: true },
+          (err, user) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log("checked in success");
+            }
+          }
+        );
       } else {
         console.log(count);
         console.log("Event complete");
