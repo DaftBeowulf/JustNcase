@@ -1,9 +1,22 @@
 const router = require("express").Router();
+const accountSid = "AC6726d73c4687e8b7a0ff07e086c6c497";
+const authToken = "2648098066bed00766feee57f9415094";
+const client = require("twilio")(accountSid, authToken);
 
 const Users = require("../models/User");
 
 function intervalFunc(interval, duration) {
   console.log("SMS fire");
+  client.messages
+    .create({
+      body: "Adam missed his check in",
+      from: process.env.TWILIO_PHONE,
+      to: process.env.CONTACT_PHONE
+    })
+    .then(message => {
+      console.log(message.sid);
+    })
+    .done();
 }
 
 // endpoint to start timer
