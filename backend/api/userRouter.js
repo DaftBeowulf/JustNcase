@@ -13,8 +13,8 @@ router.get("/", (req, res) => {
 });
 
 // get user by id
-router.get("/:_id", (req, res) => {
-  Users.findById(req.params._id, (err, user) => {
+router.get("/:username", (req, res) => {
+  Users.findOne({ username: req.params.username }, (err, user) => {
     if (err) {
       console.log(err);
       res.end();
@@ -33,6 +33,7 @@ router.post("/", (req, res) => {
   const events = req.body.events;
   user.contacts = contacts;
   user.events = events;
+
   user.save().then((err, savedUser) => {
     if (err) {
       console.log("ERROR: ", err);

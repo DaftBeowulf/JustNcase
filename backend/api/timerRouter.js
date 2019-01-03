@@ -3,7 +3,7 @@ const router = require("express").Router();
 const Users = require("../models/User");
 
 function intervalFunc(interval, duration) {
-  console.log("Checking in");
+  console.log("SMS fire");
 }
 
 // endpoint to start timer
@@ -24,11 +24,21 @@ router.get("/start/:_id", async (req, res) => {
   console.log("Event:", event);
   console.log("Interval: ", interval);
   let count = 0;
+
   const timer = setInterval(() => {
     count++;
-    if (count === duration / interval) {
-      console.log("Event complete");
-      clearInterval(timer);
+    if (count === duration / interval || event.checkedIn) {
+      if (event.checkedIn) {
+        console.log("checked in");
+        // clearInterval(timer);
+        // timer;
+        //   timer(intervalFunc(interval, duration), interval);
+        Users.findByIdAndUpdate(user._id, { ...event, checkedIn: false });
+      } else {
+        console.log(count);
+        console.log("Event complete");
+        clearInterval(timer);
+      }
     } else {
       console.log(count);
       intervalFunc(interval, duration);
