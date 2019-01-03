@@ -1,8 +1,6 @@
-require("dotenv").config();
-
 const router = require("express").Router();
 const accountSid = process.env.ACCOUNT_SID || "not authorized";
-const authToken = process.env.AUTH_TOKEN || "not authorized";
+const authToken = process.env.TWILIO_TOKEN || "not authorized";
 const twilioPhone = process.env.TWILIO_PHONE;
 const contactPhone = process.env.CONTACT_PHONE;
 const client = require("twilio")(accountSid, authToken);
@@ -34,7 +32,6 @@ router.get("/start/:_id", async (req, res) => {
       console.log(err);
       res.end();
     } else {
-      //   console.log(user);
       res.json(user);
     }
   });
@@ -42,7 +39,6 @@ router.get("/start/:_id", async (req, res) => {
   const event = user.events;
   const interval = event.checkinInterval;
   const duration = event.eventDuration;
-  console.log("Event:", event);
 
   let count = 0;
 
@@ -55,7 +51,7 @@ router.get("/start/:_id", async (req, res) => {
           console.log(err);
           res.end();
         } else {
-          console.log("Checkin block");
+          console.log("got user");
         }
       }
     );
@@ -89,8 +85,5 @@ router.get("/start/:_id", async (req, res) => {
     }
   }, interval);
 });
-
-// endpoint to clear/reset timer
-router.get("/clear/:_id", (req, res) => {});
 
 module.exports = router;
