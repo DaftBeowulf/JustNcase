@@ -12,21 +12,9 @@ export default class LoginScreen extends React.Component {
       //     into the editor Hello
       //   </Text>
       // </View>
-      // {/* <View style={styles.logoBox} />
-      //   <View style={styles.username} />
-      //   <View style={styles.password} />
-      //   <View style={styles.login} />
-      //   <View style={styles.secondarySignIn2} />
-      //   <View style={styles.secondarySignIn1} />
-      //   <Text>Login</Text>
-      //   <Text>Sign in with Facebook</Text>
-      //   <Text>Sign in with Google</Text>
-      //   <Text>Forgot Username?</Text>
-      //   <Text>Forgot Password?</Text>
-      //   <Text>Create an Account</Text>
-      //   <Text>ABOUT | CONTACT</Text> */}
       <ScrollView>
       <View style={styles.overall}>
+      <Text style={styles.logoBox}> JUST 'n CASE </Text>
       <View>
       <FloatingLabel style={styles.form} style={{resizeMode:'contain'}}/>
       <LoginButton  style={styles.LoginButton}/>
@@ -34,6 +22,20 @@ export default class LoginScreen extends React.Component {
       <Image source={require('../assets/images/google.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
       <Image source={require('../assets/images/Facebook.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
       <Image source={require('../assets/images/oval.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+
+     
+        <View style={styles.username} />
+        <View style={styles.password} />
+        <View style={styles.login} />
+        <View style={styles.secondarySignIn2} />
+        <View style={styles.secondarySignIn1} />
+        <Text>Login</Text>
+        <Text>Sign in with Facebook</Text>
+        <Text>Sign in with Google</Text>
+        <Text>Forgot Username?</Text>
+        <Text>Forgot Password?</Text>
+        <Text>Create an Account</Text>
+        <Text>ABOUT | CONTACT</Text> 
       </View>
       </ScrollView>
     );
@@ -92,9 +94,16 @@ const styles = StyleSheet.create({
     borderRadius: 1,
   },
   logoBox: {
-    height: 100,
-    backgroundColor: 'steelblue',
-    borderRadius: 1,
+    height: 80,
+    backgroundColor: '#58CF8F',
+    borderRadius: 20,
+    justifyContent: 'center',
+    fontFamily: 'Chalkduster',
+    textDecorationLine: 'underline',
+    color: 'white',
+    fontSize:'35',
+    marginLeft:10,
+    marginRight:10,
   },
   form:{
     flex: 3,
