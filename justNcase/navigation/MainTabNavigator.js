@@ -6,7 +6,6 @@ import TabBarIcon from '../components/TabBarIcon';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LoginScreen from '../screens/LoginScreen';
-import Home from '../screens/Home';
 import ProfileScreen from  '../screens/ProfileScreen';
 
 const LoginStack = createStackNavigator({
@@ -72,6 +71,5 @@ export default createBottomTabNavigator({
   LoginStack,
   LinksStack,
   SettingsStack,
-  Test,
   ProfileStack,
 });
