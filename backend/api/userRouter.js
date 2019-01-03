@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const Users = require("../models/User");
 
+// sanity check, gets all current users. for demo purposes we will only have 1 user
 router.get("/", (req, res) => {
   Users.find({}, (err, returnedUsers) => {
     if (err) {
@@ -12,7 +13,7 @@ router.get("/", (req, res) => {
   });
 });
 
-// get user by id
+// get user by id: to be hit with componentDidMount in front end to load user data
 router.get("/:username", (req, res) => {
   Users.findOne({ username: req.params.username }, (err, user) => {
     if (err) {
@@ -29,6 +30,8 @@ router.get("/:username", (req, res) => {
 router.post("/", (req, res) => {
   const user = new Users();
   user.username = req.body.username;
+  user.phone_number = req.body.phone_number;
+  user.email = req.body.email;
   const contacts = req.body.contacts;
   const events = req.body.events;
   user.contacts = contacts;
@@ -44,7 +47,7 @@ router.post("/", (req, res) => {
   });
 });
 
-// edit user without starting an event
+// edit user without starting an event (also hit by front end to change user.events.checkedIn to 'true' to cancel SMS fire upon missed checkin)
 router.put("/:_id", (req, res) => {
   Users.findByIdAndUpdate(
     req.params._id,
@@ -61,7 +64,7 @@ router.put("/:_id", (req, res) => {
   );
 });
 
-// start event by editing user by id
+// start event by editing user by id. will also redirect to timer route to start node timer
 router.put("/event/:_id", (req, res) => {
   Users.findByIdAndUpdate(
     req.params._id,
