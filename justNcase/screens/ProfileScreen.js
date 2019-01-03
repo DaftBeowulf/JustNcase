@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
+import axios from 'axios';
 
 export default class ProfileScreen extends React.Component{
     static navigationOptions = { title: 'Your Profile'};
@@ -19,15 +20,25 @@ export default class ProfileScreen extends React.Component{
             ICEcontats: [],
         })
     }
-    
-    
+    // componentDidMount{
+    //     axios.get().then(user=>{
+
+    //     })
+    // }
 
     render(){
         return (
             <View style={styles.container}>
-            <View>
-                <Text>Hello world</Text>
+            <View style={{backgroundColor: '#1EB865', width: '100%',}}>
+                <Text style={styles.userText}>Lambda Joe</Text>
+                
             </View>
+            <Text>
+                Emergancey Contacts
+            </Text>
+            <Text>
+                Manage List
+            </Text>
             </View>
            
         )
@@ -38,5 +49,14 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#dcffcc',
         alignItems: 'center',
+        flex:1,
+    },
+    userCard:{
+        backgroundColor: '#1EB865',
+        flex: 2,
+    },
+    userText:{
+        fontSize: 22,
+
     }
 })
