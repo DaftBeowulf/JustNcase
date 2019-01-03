@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 import FloatingLabel from '../screens/FloatingLabel';
-import LoginButton from '../components/LoginButton';
+// import LoginButton from '../components/LoginButton';
 
 export default class LoginScreen extends React.Component {
   render() {
@@ -22,9 +22,9 @@ export default class LoginScreen extends React.Component {
       </View>
 
       <View style={styles.second}>
-      <Image source={require('../assets/images/google.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
-      <Image source={require('../assets/images/Facebook.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
-      <Image source={require('../assets/images/oval.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+      <Image source={require('../assets/png_icons/google.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+      <Image source={require('../assets/png_icons/Facebook.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
+      <Image source={require('../assets/png_icons/oval.png')} style={{aspectRatio:1.5, resizeMode:'contain'}}/>
 
      
         <View style={styles.username} />
