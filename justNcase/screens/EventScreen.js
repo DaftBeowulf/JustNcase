@@ -12,6 +12,7 @@ import TextInput from "../components/TextInput";
 import TextInputSpecial from "../components/TextInputSpecial";
 import axios from "axios";
 
+
 export default class EventScreen extends React.Component {
   state = {
     event: {}
@@ -143,51 +144,52 @@ const styles = StyleSheet.create({
   secondText: {
     color: "#4A4A4A",
     // fontFamily:'SF Pro Tex',
-    marginTop: 15,
-    fontSize: 12
-  },
-  fancyCard: {
-    height: 158,
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10,
-    position: "relative",
-    backgroundColor: "white",
-    borderRadius: 2,
-    borderWidth: 0.5,
-    borderColor: "#1EB865",
-    opacity: 0.5,
-    backgroundColor: "white"
-  },
-  sidebyside: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    marginTop: 20,
-    marginLeft: 5,
-    marginRight: 30
-  },
-  inside: {
-    flexDirection: "column",
-    alignContent: "space-around",
-    marginTop: 20,
-    marginLeft: 20,
-    color: "#4A4A4A"
-  },
-  smallText: {
-    fontSize: 6,
-    marginLeft: 180,
-    marginTop: 5,
-    color: "#4A4A4A"
-  },
-  pockets: {
-    height: 20,
-    width: 80,
-    borderRadius: 4,
-    backgroundColor: "#1EB865"
-  },
-  textInput: {
-    flexDirection: "column",
-    alignContent: "space-between",
-    marginTop: -118
-  }
-});
+    marginTop:15,
+    fontSize:12,
+},
+fancyCard:{
+    height:158,
+    marginLeft:10,
+    marginRight:10,
+    marginTop:10,
+    position:'relative',
+    backgroundColor:'white',
+    borderRadius:2,
+    borderWidth:0.5,
+    borderColor:'#1EB865',
+    opacity:.5,
+    backgroundColor:'white'
+},
+sidebyside:{
+    flexDirection: 'row',
+    justifyContent:'space-evenly',
+    marginTop:50,
+    marginLeft:5,
+    marginRight:30,
+},
+inside:{
+flexDirection:'column',
+alignContent:'space-around',
+marginTop:20,
+marginLeft:20,
+color:'#4A4A4A',
+},
+smallText:{
+fontSize:6,
+marginLeft:180,
+marginTop:5,
+color:'#4A4A4A',
+},
+pockets:{
+height:20,
+width:80,
+borderRadius:4,
+backgroundColor:'#1EB865',
+},
+textInput:{
+    flexDirection:'column',
+    alignContent:'space-between',
+    marginTop:-118,
+
+}
+})

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import { NativeRouter, Route, Link } from "react-router-native";
 import ProfileScreen from './ProfileScreen';
 
@@ -17,32 +17,32 @@ export default class LoginScreen extends React.Component {
       //   </Text>
       // </View>
       <ScrollView>
-      <View style={styles.overall}>
+        <View style={styles.overall}>
 
-      <View style={styles.first}>
-      <Image source={require('../assets/png_icons/logo.png')} style={{aspectRatio: 1.5, resizeMode:'contain', marginLeft:20, marginTop:-35, marginBottom:-55}}/>
+          <View style={styles.first}>
+            <Image source={require('../assets/png_icons/logo.png')} style={{aspectRatio: 1.5, resizeMode:'contain', marginLeft:72, marginTop:-35, marginBottom:-55}}/>
         {/* <Text style={styles.logoBox}> JUST 'n CASE </Text> */}
-        <FloatingLabel style={styles.form} style={{resizeMode:'contain', height:'10%', marginTop:-425}} />
+             <FloatingLabel style={styles.form} style={{resizeMode:'contain', height:'8%', marginTop:-425}} />
         {/* <LoginButton  style={styles.LoginButton} style={{resizeMode:'contain',}}/> */}
-      </View>
+          </View>
 
-      <View style={styles.second}>
-      <Image source={require('../assets/png_icons/users.png')} style={{aspectRatio:.8, resizeMode:'contain', marginLeft:255, marginTop: -225}}/>
-      <Text style={{color:'black', marginLeft:185, marginTop: 0, fontSize:13}}>Forgot Username?</Text>
-      <Image source={require('../assets/png_icons/padlock.png')} style={{aspectRatio:.6, resizeMode:'contain', marginLeft:262, marginTop: 1}}/>
-      <Text style={{color:'black', marginLeft:185, marginTop: 3, fontSize:13}}>Forgot Password?</Text>
-      <Link to="/ProfileScreen" >
-      <Image source={require('../assets/png_icons/LoginButton.png')} style={{aspectRatio:1.5, resizeMode:'contain', marginLeft:85, marginTop: -15}}/>
-      </Link>
-      <Image source={require('../assets/png_icons/google.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:75, marginTop:80}}/>
-      <Image source={require('../assets/png_icons/Facebook.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:75, marginTop:-10}}/>
-      <Image source={require('../assets/png_icons/oval.png')} style={{aspectRatio:.8, resizeMode:'contain', marginLeft:125, marginTop: -235}}/>
-      <Text style={{color:'white', marginTop:140, marginLeft:95, fontSize:15}}>Create an Account</Text>
-      <View style={{borderBottomColor:'white', borderBottomWidth:1, paddingTop:5, paddingBottom:10}}></View>
-      <Text style={{color:'white', marginLeft:95, paddingTop:20, fontSize:15}}>ABOUT | CONTACT</Text>
+           <View style={styles.second}>
+               <Image source={require('../assets/png_icons/users.png')} style={{aspectRatio:.8, resizeMode:'contain', marginLeft:350, marginTop: -200}}/>
+               <Text style={{color:'black', marginLeft:140, marginTop: 0, fontSize:13}}>Forgot Username?</Text>
+               <Image source={require('../assets/png_icons/padlock.png')} style={{aspectRatio:.6, resizeMode:'contain', marginLeft:362, marginTop: 1}}/>
+               <Text style={{color:'black', marginLeft:145, marginTop: 3, fontSize:13}}>Forgot Password?</Text>
+               <TouchableWithoutFeedback onPress={()=> this.props.navigation.navigate('Profile')}>
+                   <Image source={require('../assets/png_icons/LoginButton.png')} style={{aspectRatio:1.5, resizeMode:'contain', marginLeft:125, marginTop: -15}} />
+               </TouchableWithoutFeedback>
+               <Image source={require('../assets/png_icons/google.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:120, marginTop:80}}/>
+               <Image source={require('../assets/png_icons/Facebook.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:120, marginTop:-10}}/>
+               <Image source={require('../assets/png_icons/climbing.png')} style={{aspectRatio:.8, resizeMode:'contain', marginLeft:165, marginTop: -219}}/>
+               <Text style={{color:'white', marginTop:140, marginLeft:135, fontSize:15}}>Create an Account</Text>
+               <View style={{borderBottomColor:'white', borderBottomWidth:1, paddingTop:5, paddingBottom:10}}></View>
+                  <Text style={{color:'white', marginLeft:135, paddingTop:20, fontSize:15}}>ABOUT | CONTACT</Text>
+          </View>
+
         </View>
-
-      </View>
       </ScrollView>
     );
   }
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   second:{
     flex:3,
     backgroundColor:'#58CF8F',
-    height:300,
+    height:400,
   },
   secondarySignIn1: {
     height: 30,

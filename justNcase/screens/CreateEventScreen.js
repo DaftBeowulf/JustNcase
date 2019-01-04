@@ -34,8 +34,8 @@ render(){
                 </View>
             </View>
             <View style={styles.sidebyside}>
-            <Image source={require('../assets/png_icons/cancelbutton.png')} style={{ height:50, width:120,resizeMode:'contain', marginLeft:30, marginTop:-18}} />
-            <Image source={require('../assets/png_icons/createEventButton.png')} style={{ height:50, width:120, resizeMode:'contain', marginTop:-18}} />
+            <Image source={require('../assets/png_icons/createEventButton.png')} style={{ height:60, width:400, resizeMode:'contain', marginTop:20}} />
+            <Image source={require('../assets/png_icons/cancelbutton.png')} style={{ height:60, width:400,resizeMode:'contain', marginTop:40}} />
             </View>
         </View>
     )
@@ -85,11 +85,12 @@ fancyCard:{
     backgroundColor:'white'
 },
 sidebyside:{
-    flexDirection: 'row',
-    justifyContent:'space-evenly',
-    marginTop:20,
-    marginLeft:5,
-    marginRight:30,
+    flexDirection: 'column',
+    alignContent:'space-evenly',
+    marginTop:60,
+    // marginLeft:5,
+    // marginRight:30,
+    width:300
 },
 inside:{
 flexDirection:'column',
