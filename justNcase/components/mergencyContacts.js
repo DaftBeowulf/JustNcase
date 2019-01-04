@@ -5,10 +5,7 @@ import EcontactCard from './EcontactCard';
 class MergencyContacts extends React.Component{
     constructor(props){
         super(props);
-        // this.state={
-        //     user:{}
-        // }
-
+  
     }
 
     render(){

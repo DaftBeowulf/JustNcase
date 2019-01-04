@@ -18,11 +18,8 @@
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-navigation": "^2.18.2",
-<<<<<<< HEAD
-    "util": "^0.11.1"
-=======
+    "util": "^0.11.1",
     "react-router-native": "^4.3.0"
->>>>>>> e3c8c4aaabe50980717963a6b2cf6acc83a4bd68
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
