@@ -17,14 +17,14 @@ render(){
                 <Image source={require('../assets/png_icons/biking.png')} style={{marginLeft:110, marginTop:10}} />
             </View>
             <View style={styles.thinBox}>
-                <Text style={styles.secondText}>MY EVENT CHECK-IN</Text>
+                <Text style={styles.secondText}>MY EVENT FOR THE DAY</Text>
                 <Text style={styles.secondText}>Wed, Jan 4 2019</Text>
             </View>
             <View style={styles.fancyCard}>
                 <View>
-                    <Text style={styles.inside}>Event Name</Text>
-                    <Text style={styles.inside}>Total Duration</Text>
-                    <Text style={styles.inside}>Check-In Every</Text>
+                    <Text style={styles.inside}>Set Event Name</Text>
+                    <Text style={styles.inside}>Set Event Duration</Text>
+                    <Text style={styles.inside}>Set Check-In Interval</Text>
                     <Text style={styles.smallText}>Change Duration and Check-In>></Text>
                 </View>
                 <View style={styles.textInput}>
@@ -34,11 +34,8 @@ render(){
                 </View>
             </View>
             <View style={styles.sidebyside}>
-            <Image source={require('../assets/png_icons/stopEventButton.png')} style={{ height:50, width:120,resizeMode:'contain', marginLeft:30, marginTop:-18}} />
-            <Image source={require('../assets/png_icons/startEventButton.png')} style={{ height:50, width:120, resizeMode:'contain', marginTop:-18}} />
-            </View>
-            <View>
-            <Image source={require('../assets/png_icons/checkInButton.png')} style={{ height:50, width:120, resizeMode:'contain', marginTop:-5, marginLeft: 95}} />
+            <Image source={require('../assets/png_icons/cancelbutton.png')} style={{ height:50, width:120,resizeMode:'contain', marginLeft:30, marginTop:-18}} />
+            <Image source={require('../assets/png_icons/createEventButton.png')} style={{ height:50, width:120, resizeMode:'contain', marginTop:-18}} />
             </View>
         </View>
     )
