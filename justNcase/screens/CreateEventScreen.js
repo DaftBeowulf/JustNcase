@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView} from 'react-native';
 import { NativeRouter, Route, Link } from "react-router-native";
 import TextInput from '../components/TextInput';
 import TextInputSpecial from '../components/TextInputSpecial';
