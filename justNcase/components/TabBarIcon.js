@@ -1,16 +1,17 @@
 import React from 'react';
-import { Icon } from 'expo';
+import {Image} from 'react-native';
 
 import Colors from '../constants/Colors';
 
 export default class TabBarIcon extends React.Component {
   render() {
     return (
-      <Icon.Ionicons
-        name={this.props.name}
-        size={35}
-        style={{ marginBottom: -3 }}
-        color={this.props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+      <Image
+      source={(require('../assets/png_icons/time.png'))}
+      name={this.props.name}
+      // size={20}
+      color={this.props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+      style={{height:10, width:10}}
       />
     );
   }
