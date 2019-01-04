@@ -215,14 +215,15 @@ const styles = StyleSheet.create({
     height: 80,
     backgroundColor: "#58CF8F",
     borderRadius: 10,
-    justifyContent: "center",
-    fontFamily: "Chalkduster",
-    textDecorationLine: "underline",
-    color: "white",
+    justifyContent: 'center',
+    fontFamily: 'Chalkduster',
+    textDecorationLine: 'underline',
+    color: 'white',
     fontSize: 35,
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10
+    marginLeft:10,
+    marginRight:10,
+    marginTop:10,
+
   },
   form: {
     flex: 3,
