@@ -2,17 +2,6 @@ const router = require("express").Router();
 
 const Users = require("../models/User");
 
-// sanity check, gets all current users. for demo purposes we will only have 1 user
-router.get("/", (req, res) => {
-  Users.find({}, (err, returnedUsers) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(returnedUsers);
-    }
-  });
-});
-
 // get user by id: to be hit with componentDidMount in front end to load user data
 router.get("/:username", (req, res) => {
   Users.findOne({ username: req.params.username }, (err, user) => {
@@ -32,10 +21,8 @@ router.post("/", (req, res) => {
   user.username = req.body.username;
   user.phone_number = req.body.phone_number;
   user.email = req.body.email;
-  const contacts = req.body.contacts;
-  const events = req.body.events;
-  user.contacts = contacts;
-  user.events = events;
+  user.contacts = req.body.contacts;
+  user.events = req.body.events;
 
   user.save().then((err, savedUser) => {
     if (err) {

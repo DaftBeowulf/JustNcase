@@ -14,7 +14,10 @@ const UserSchema = new Schema({
     name: String,
     eventDuration: Number,
     checkinInterval: Number,
-    checkedIn: { type: Boolean, default: false }
+    checkedIn: { type: Boolean, default: false },
+    // assume lat & long will be stored as single string with form of:
+    // `{latitude},{longitude}` ex: "44.740259,-110.09477"
+    geodata: [{ latLong: String }]
   }
 });
 

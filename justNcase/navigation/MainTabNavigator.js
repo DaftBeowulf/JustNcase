@@ -9,6 +9,7 @@ import LoginScreen from '../screens/LoginScreen';
 import ProfileScreen from  '../screens/ProfileScreen';
 import EventScreen from '../screens/EventScreen';
 import CreateEventScreen from '../screens/CreateEventScreen';
+import ContactsScreen from '../screens/emergContacts';
 
 const LoginStack = createStackNavigator({
   Login: LoginScreen,
@@ -18,11 +19,11 @@ LoginStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
+      // name={
+      //   Platform.OS === 'ios'
+      //     ? `ios-information-circle${focused ? '' : '-outline'}`
+      //     : 'md-information-circle'
+      // }
     />
   ),
 };
@@ -75,6 +76,20 @@ LinksStack.navigationOptions = {
   ),
 };
 
+const EditContacts = createStackNavigator({
+  Contacts: ContactsScreen,
+});
+
+EditContacts.navigationOptions = {
+  tabBarLabel: 'Emergency Contacts',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+
 const SettingsStack = createStackNavigator({
   Settings: SettingsScreen,
 });
@@ -110,4 +125,5 @@ export default createBottomTabNavigator({
   LinksStack,
   SettingsStack,
   ProfileStack,
+  ContactsScreen,
 });
