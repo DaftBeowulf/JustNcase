@@ -22,7 +22,7 @@ export default class LoginScreen extends React.Component {
       <View style={styles.first}>
       <Image source={require('../assets/png_icons/logo.png')} style={{aspectRatio: 1.5, resizeMode:'contain', marginLeft:20, marginTop:-35, marginBottom:-55}}/>
         {/* <Text style={styles.logoBox}> JUST 'n CASE </Text> */}
-        <FloatingLabel style={styles.form} style={{resizeMode:'contain', height:'10%', marginTop:-425}}/>
+        <FloatingLabel style={styles.form} style={{resizeMode:'contain', height:'10%', marginTop:-425}} />
         {/* <LoginButton  style={styles.LoginButton} style={{resizeMode:'contain',}}/> */}
       </View>
 

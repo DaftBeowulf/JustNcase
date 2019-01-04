@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 import { NativeRouter, Route, Link } from "react-router-native";
 import TextInput from '../components/TextInput';
+import TextInputSpecial from '../components/TextInputSpecial';
 
 export default class EventScreen extends React.Component{
 render(){
@@ -20,12 +21,16 @@ render(){
                 <Text style={styles.secondText}>Wed, Jan 4 2019</Text>
             </View>
             <View style={styles.fancyCard}>
-                <Text style={styles.inside}>Total Duration</Text>
-                <Text style={styles.inside}>Check-In Every</Text>
-                <Text style={styles.smallText}>Change Duration and Check-In>></Text>
+                <View>
+                    <Text style={styles.inside}>Set Event Name</Text>
+                    <Text style={styles.inside}>Total Duration</Text>
+                    <Text style={styles.inside}>Check-In Every</Text>
+                    <Text style={styles.smallText}>Change Duration and Check-In>></Text>
+                </View>
                 <View style={styles.textInput}>
-                <TextInput />
-                <TextInput />
+                    <TextInputSpecial />
+                    <TextInput /> 
+                    <TextInput />
                 </View>
             </View>
             <View style={styles.sidebyside}>
@@ -70,7 +75,7 @@ secondText:{
     fontSize:12,
 },
 fancyCard:{
-    height:90,
+    height:158,
     marginLeft:10,
     marginRight:10,
     marginTop:10,
@@ -91,7 +96,7 @@ sidebyside:{
 },
 inside:{
 flexDirection:'column',
-alignContent:'space-between',
+alignContent:'space-around',
 marginTop:20,
 marginLeft:20,
 color:'#4A4A4A',
@@ -109,6 +114,9 @@ borderRadius:4,
 backgroundColor:'#1EB865',
 },
 textInput:{
-    marginTop:-75,
+    flexDirection:'column',
+    alignContent:'space-between',
+    marginTop:-118,
+
 }
 })
