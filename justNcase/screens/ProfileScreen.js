@@ -23,7 +23,7 @@ export default class ProfileScreen extends React.Component{
            isUser: false,
         }
     }
-    componentWillMount=()=>{
+    componentDidMount=()=>{
         axios.get('https://justncase.now.sh/user/lambdajoe')
         .then(response=>{
             this.setState({
