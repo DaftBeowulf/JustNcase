@@ -20,18 +20,55 @@ function retrieveUrl(user) {
   return gmapUrl;
 }
 
-function fireContactSMS(userCheck) {
+function fireContactSMS(user) {
   if (accountSid === "not authorized" || authToken === "not authorized") {
     console.log("contactSMS fire attempt--twilio not authorized");
   } else {
+    if (user.events.checkedIn) {
+      // user checked in at checkpoint
+      client.messages
+        .create({
+          body: `${
+            user.username
+          } has safely checked in at a scheduled checkpoint with JustNcase!`,
+          from: twilioPhone,
+          to: contactPhone
+        })
+        .then(message => {
+          console.log(message.sid);
+        })
+        .done();
+    } else {
+      // user missed a checkin
+      client.messages
+        .create({
+          body: `It looks like ${
+            user.username
+          } just missed a scheduled check in. Reach out to them as soon as you can, here are some breadcrumbs they've left behind JustNcase: ${
+            // body: retrieveUrl(user), // in production, this function would fire and return the dynamic url
+            process.env.GEO_IMAGE_URL // in development/demo, hardcoding the url for the image link in
+          }`,
+
+          from: twilioPhone,
+          to: contactPhone
+        })
+        .then(message => {
+          console.log(message.sid);
+        })
+        .done();
+    }
+  }
+}
+
+// in production, the number this fires to will be separate from that used in fireContactSMS. for demo/dev purposes, both will be sent to same number
+// fires an SMS to the user's number alerting them before each check in deadline that the check in is approaching and they can now check in
+function fireUserSMS(user) {
+  if (accountSid === "not authorized" || authToken === "not authorized") {
+    console.log("userSMS fire attempt--twilio not authorized");
+  } else {
     client.messages
       .create({
-        // body: retrieveUrl(user), // in production, this function would fire and return the dynamic url
-        body: `You are receiving this message because ${
-          userCheck.username
-        } has missed a scheduled checkin with JustNcase. Here is a link to their last know locations: ${
-          process.env.GEO_IMAGE_URL
-        }`, // in development/demo, hardcoding the url for the image link in
+        body: `${user.username}, it\'s time to check in with JustNcase!`,
         from: twilioPhone,
         to: contactPhone
       })
@@ -42,15 +79,45 @@ function fireContactSMS(userCheck) {
   }
 }
 
-// in production, the number this fires to will be separate from that used in fireContactSMS. for demo/dev purposes, both will be sent to same number
-// fires an SMS to the user's number alerting them before each checkin deadline that the checkin is approaching and they can now check in
-function fireUserSMS(userCheck) {
+// notify contact that user has begun a new event
+function eventStartSMS(user) {
   if (accountSid === "not authorized" || authToken === "not authorized") {
-    console.log("userSMS fire attempt--twilio not authorized");
+    console.log("contactSMS fire attempt--twilio not authorized");
   } else {
+    // simulate dynamic contact selections, for demo assume user has already selected this specific contact
+    let contact = user.contacts[0];
     client.messages
       .create({
-        body: `${userCheck.username}, it\'s time to check in with JustNcase!`,
+        body: `${contact.name}, you are receiving this message because ${
+          user.username
+        } has just embarked on a ${
+          user.events.name
+        } adventure and selected you as an emergency contact! You may receive more notifications if ${
+          user.username
+        } misses a checkin with the app or when their adventure is completed, thank you for being their source of support JustNcase!`,
+        from: twilioPhone,
+        to: contactPhone
+      })
+      .then(message => {
+        console.log(message.sid);
+      })
+      .done();
+  }
+}
+
+// notify contact that user has successfully completed their event
+function eventEndSMS(user) {
+  if (accountSid === "not authorized" || authToken === "not authorized") {
+    console.log("contactSMS fire attempt--twilio not authorized");
+  } else {
+    let contact = user.contacts[0];
+    client.messages
+      .create({
+        body: `${contact.name}, ${
+          user.username
+        } has successfully finished their ${
+          user.events.name
+        } adventure! Thanks for being there for them, JustNcase! :)`,
         from: twilioPhone,
         to: contactPhone
       })
@@ -78,8 +145,11 @@ router.get("/start/:_id", async (req, res) => {
 
   let count = 0;
 
+  // function to notify contact that user has started trip and will be receiving more notifications
+  eventStartSMS(user);
+
   const timer = setInterval(async () => {
-    let userCheck = await Users.findById(
+    let user = await Users.findById(
       req.params._id,
 
       (err, user) => {
@@ -110,60 +180,33 @@ router.get("/start/:_id", async (req, res) => {
     count++;
 
     // this call alerts user they need to check in (fires no matter what)
-    //todo: pass in checkinWindow to later dynamically tell the user how much time the user has to check in
-    fireUserSMS(userCheck);
+    //todo: pass in checkinWindow to fireUserSMS to dynamically tell the user how much time they have to check in
+    fireUserSMS(user);
 
-    // then setTimeout that fires waiting the checkinWindow amount of time, when it runs it checks the db to see if user is checked in
+    // then setTimeout that fires after waiting the checkinWindow amount of time, when it runs it checks the db to see if user is checked in or not
     const checkInDeadline = setTimeout(async () => {
-      let userCheck = await Users.findById(
-        req.params._id,
-
-        (err, user) => {
-          if (err) {
-            console.log(err);
-            res.end();
-          }
+      let user = await Users.findById(req.params._id, (err, user) => {
+        if (err) {
+          console.log(err);
+          res.end();
         }
-      );
+      });
 
       if (count >= duration / interval) {
         // event has ended
-        console.log(userCheck.events.checkedIn);
-        if (userCheck.events.checkedIn) {
+        if (user.events.checkedIn) {
           // event ended and was checked in
-          console.log("\n=== event ended, final checkin on time ===\n");
-          Users.findByIdAndUpdate(
-            req.params._id,
-            {
-              events: { ...event, checkedIn: false }
-            },
-            { new: true },
-            (err, user) => {
-              if (err) {
-                console.log(err);
-              } else {
-                console.log("\n=== checkedIn changed back to false ===\n");
-              }
-            }
-          );
+          eventEndSMS(user);
         } else {
           // event ended but user was NOT checked in
-
-          console.log("count: ", count, "Event ended but missed final checkin");
-          fireContactSMS(userCheck);
+          fireContactSMS(user);
         }
         clearInterval(timer); // clear interval no matter what, event has ended
       } else {
         // event still going
-        console.log(userCheck.events.checkedIn);
-        if (userCheck.events.checkedIn) {
+        if (user.events.checkedIn) {
           // event still going and was checked in
-
-          console.log(
-            "count: ",
-            count,
-            "event still going, checked in on time"
-          );
+          fireContactSMS(user);
           Users.findByIdAndUpdate(
             req.params._id,
             {
@@ -180,9 +223,7 @@ router.get("/start/:_id", async (req, res) => {
           );
         } else {
           // event still going and missed check in
-
-          console.log("count: ", count, "missed check in");
-          fireContactSMS(userCheck);
+          fireContactSMS(user);
         }
       }
     }, checkinWindow);
