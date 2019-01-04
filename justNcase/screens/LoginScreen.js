@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Chalkduster',
     textDecorationLine: 'underline',
     color: 'white',
-    fontSize:'35',
+    fontSize: 35,
     marginLeft:10,
     marginRight:10,
     marginTop:10,
