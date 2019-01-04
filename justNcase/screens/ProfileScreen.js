@@ -50,6 +50,27 @@ export default class ProfileScreen extends React.Component{
                 
                 <ScrollView style={styles.container}>
                     <View>
+                    <View style={styles.thinBox}>
+          <Image
+            source={require("../assets/png_icons/hiking.png")}
+            style={{ aspectRatio:.2, height:40, width:40,resizeMode:'contain', marginLeft:115, marginTop:-72 }}
+          />
+          <Image
+            source={require("../assets/png_icons/settings.png")}
+            style={{ height: 15, width: 15, marginRight: 0, marginTop: 20 }}
+          />
+          <Image
+            source={require("../assets/png_icons/disclosureIndicator.png")}
+            style={{
+              height: 15,
+              width: 15,
+              marginLeft: 0,
+              marginTop: 20,
+              position: "absolute"
+            }}
+          />
+        </View>
+        
                         <View style={{backgroundColor: '#1EB865', height:160, justifyContent:'space-around', flexDirection:'row',}}>
                             <View >
                                 <Image source={require('../assets/png_icons/lambda.png')} style={{height:50, width:50, marginLeft:18, marginTop:45, }}/>
@@ -96,5 +117,24 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         margin:8,
         fontSize:10,
-    },
+    },  
+    thinBox: {
+        height: 50,
+        alignItems: "stretch",
+        position: "relative",
+        backgroundColor: "white",
+        flexDirection: "row",
+        justifyContent: "space-around"
+      },
+      bigBox: {
+        height: 30,
+        alignItems: "stretch",
+        position: "relative",
+        backgroundColor: '#e9fce0',
+      },
+      headerText: {
+        color: "#1EB865",
+        marginTop: 10,
+        marginLeft: 80
+      },
 })

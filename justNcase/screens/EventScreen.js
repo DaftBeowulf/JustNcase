@@ -62,8 +62,8 @@ export default class EventScreen extends React.Component {
         </View>
         <View style={styles.bigBox}>
           <Image
-            source={require("../assets/png_icons/biking.png")}
-            style={{ marginLeft: 110, marginTop: 10 }}
+            source={require("../assets/png_icons/hiking.png")}
+            style={{ marginLeft: 180, marginTop: 10 }}
           />
         </View>
         <View style={styles.thinBox}>
@@ -90,11 +90,11 @@ export default class EventScreen extends React.Component {
           <Image
             source={require("../assets/png_icons/stopEventButton.png")}
             style={{
-              height: 50,
-              width: 120,
+              height: 70,
+              width: 180,
               resizeMode: "contain",
               marginLeft: 30,
-              marginTop: -18
+              marginTop: 30
             }}
           />
         </View>
@@ -103,11 +103,11 @@ export default class EventScreen extends React.Component {
           <Image
             source={require("../assets/png_icons/checkInButton.png")}
             style={{
-              height: 50,
-              width: 120,
+              height: 70,
+              width: 180,
               resizeMode: "contain",
-              marginTop: -5,
-              marginLeft: 95
+              marginTop: 20,
+              marginLeft: 120
             }}
           />
 </TouchableWithoutFeedback>
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     fontSize:12,
 },
 fancyCard:{
-    height:158,
+    height:200,
     marginLeft:10,
     marginRight:10,
     marginTop:10,
@@ -173,6 +173,7 @@ alignContent:'space-around',
 marginTop:20,
 marginLeft:20,
 color:'#4A4A4A',
+fontSize:27,
 },
 smallText:{
 fontSize:6,
