@@ -7,10 +7,12 @@ import {
     Text,
     TouchableOpacity,
     View,
+    Button
 } from 'react-native';
 
 import axios from 'axios';
 import MergencyContact from '../components/MergencyContacts';
+
 
 export default class ProfileScreen extends React.Component{
     static navigationOptions = { title: 'Your Profile'};
@@ -44,7 +46,6 @@ export default class ProfileScreen extends React.Component{
             </View>
         )           
         } else {
-            
             return (
                 
                 <ScrollView style={styles.container}>
@@ -52,6 +53,8 @@ export default class ProfileScreen extends React.Component{
                         <View style={{backgroundColor: '#1EB865', height:160, justifyContent:'space-around', flexDirection:'row',}}>
                             <View >
                                 <Image source={require('../assets/png_icons/lambda.png')} style={{height:50, width:50, marginLeft:18, marginTop:45, }}/>
+                                {/* <Button title='stuff' onPress={()=> this.props.navigation.navigate('Login')}/> */}
+                                
                             </View>
                         <View style={{marginTop:30}} >
                             <Text style={styles.userText}>{this.state.user.username}</Text>

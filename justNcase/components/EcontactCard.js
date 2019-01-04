@@ -25,11 +25,16 @@ const EcontactCard = (props) =>{
                      style={{ height:25, width: 35,margin:15, marginBottom:5 }} />
                      <Text style={{fontSize:10, color:'#4A4A4A', marginBottom:8 }}>Send SMS</Text>
                 </View>
+                <View>
                     <Image source={require('../assets/png_icons/call.png')}
-                    style={{height:25, width:25,margin:15, marginLeft:20 }} />
+                    style={{height:25, width:25,margin:15, marginLeft:20, marginBottom:3 , marginTop:17}} />
+                    <Text style={{fontSize:10, color:'#4A4A4A', marginBottom:8, marginLeft:25 }}>
+                     Call
+                     </Text>
+                     </View>
                 </View>
                 <Text 
-                style={{fontSize:10, color:'#4A4A4A', alignContent:'flex-end', marginLeft:25 }} >
+                style={{fontSize:10, color:'#4A4A4A', alignContent:'flex-end', marginLeft:28 }} >
                   Edit Contact  
                 </Text>
             </View>
@@ -41,7 +46,8 @@ const styles=StyleSheet.create({
     contactsText:{
         fontSize:15,
         color:'#4A4A4A',
-         height:20, 
+         height:20,
+         width:130 
     }
 })
 export default EcontactCard;
