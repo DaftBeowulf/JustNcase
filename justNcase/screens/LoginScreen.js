@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 import { NativeRouter, Route, Link } from "react-router-native";
+import ProfileScreen from './ProfileScreen';
 
 
 import FloatingLabel from '../screens/FloatingLabel';
@@ -30,7 +31,7 @@ export default class LoginScreen extends React.Component {
       <Text style={{color:'black', marginLeft:185, marginTop: 0, fontSize:13}}>Forgot Username?</Text>
       <Image source={require('../assets/png_icons/padlock.png')} style={{aspectRatio:.6, resizeMode:'contain', marginLeft:262, marginTop: 1}}/>
       <Text style={{color:'black', marginLeft:185, marginTop: 3, fontSize:13}}>Forgot Password?</Text>
-      <Link to="/ProfileScreen">
+      <Link to="/ProfileScreen" >
       <Image source={require('../assets/png_icons/LoginButton.png')} style={{aspectRatio:1.5, resizeMode:'contain', marginLeft:85, marginTop: -15}}/>
       </Link>
       <Image source={require('../assets/png_icons/google.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:75, marginTop:80}}/>
@@ -39,11 +40,6 @@ export default class LoginScreen extends React.Component {
       <Text style={{color:'white', marginTop:140, marginLeft:95, fontSize:15}}>Create an Account</Text>
       <View style={{borderBottomColor:'white', borderBottomWidth:1, paddingTop:5, paddingBottom:10}}></View>
       <Text style={{color:'white', marginLeft:95, paddingTop:20, fontSize:15}}>ABOUT | CONTACT</Text>
-     
-        {/*
-        <Text>Forgot Username?</Text>
-        <Text>Forgot Password?</Text>
-        */}
         </View>
 
       </View>

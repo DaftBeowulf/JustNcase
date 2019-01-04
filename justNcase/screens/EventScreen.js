@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 import { NativeRouter, Route, Link } from "react-router-native";
+import TextInput from '../components/TextInput';
 
 export default class EventScreen extends React.Component{
 render(){
     return(
         <View style={styles.overall}>
             <View style={styles.thinBox}>
-                <Text style={styles.headerText}>Cycling Event</Text>
+                <Text style={styles.headerText}>Let's get started!</Text>
                 <Image source={require('../assets/png_icons/settings.png')} style={{height:20, width:20, marginRight:0, marginTop:10}} />
                 <Image source={require('../assets/png_icons/disclosureIndicator.png')} style={{height:15, width:15, marginLeft:0, marginTop:10, position:'absolute'}} />
             </View>
@@ -22,13 +23,17 @@ render(){
                 <Text style={styles.inside}>Total Duration</Text>
                 <Text style={styles.inside}>Check-In Every</Text>
                 <Text style={styles.smallText}>Change Duration and Check-In>></Text>
+                <View style={styles.textInput}>
+                <TextInput />
+                <TextInput />
+                </View>
             </View>
             <View style={styles.sidebyside}>
             <Image source={require('../assets/png_icons/stopEventButton.png')} style={{ height:50, width:120,resizeMode:'contain', marginLeft:30, marginTop:-18}} />
             <Image source={require('../assets/png_icons/startEventButton.png')} style={{ height:50, width:120, resizeMode:'contain', marginTop:-18}} />
             </View>
             <View>
-
+            <Image source={require('../assets/png_icons/checkInButton.png')} style={{ height:50, width:120, resizeMode:'contain', marginTop:-5, marginLeft: 95}} />
             </View>
         </View>
     )
@@ -72,6 +77,10 @@ fancyCard:{
     position:'relative',
     backgroundColor:'white',
     borderRadius:'2',
+    borderWidth:'0.5',
+    borderColor:'#1EB865',
+    opacity:.5,
+    backgroundColor:'white'
 },
 sidebyside:{
     flexDirection: 'row',
@@ -93,4 +102,13 @@ marginLeft:180,
 marginTop:5,
 color:'#4A4A4A',
 },
+pockets:{
+height:20,
+width:80,
+borderRadius:4,
+backgroundColor:'#1EB865',
+},
+textInput:{
+    marginTop:-75,
+}
 })
