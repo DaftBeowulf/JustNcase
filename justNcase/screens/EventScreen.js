@@ -14,7 +14,7 @@ render(){
                 <Image source={require('../assets/png_icons/disclosureIndicator.png')} style={{height:15, width:15, marginLeft:0, marginTop:10, position:'absolute'}} />
             </View>
             <View style={styles.bigBox}>
-                <Image source={require('../assets/png_icons/biking.png')} style={{marginLeft:110, marginTop:10}} />
+                <Image source={require('../assets/png_icons/biking.png')} style={{marginLeft:180, marginTop:10}} />
             </View>
             <View style={styles.thinBox}>
                 <Text style={styles.secondText}>MY EVENT CHECK-IN</Text>
@@ -38,7 +38,7 @@ render(){
             <Image source={require('../assets/png_icons/startEventButton.png')} style={{ height:50, width:120, resizeMode:'contain', marginTop:-18}} />
             </View>
             <View>
-            <Image source={require('../assets/png_icons/checkInButton.png')} style={{ height:50, width:120, resizeMode:'contain', marginTop:-5, marginLeft: 95}} />
+            <Image source={require('../assets/png_icons/checkInButton.png')} style={{ height:60, width:145, resizeMode:'contain', marginTop:29, marginLeft: 135}} />
             </View>
         </View>
     )
@@ -90,7 +90,7 @@ fancyCard:{
 sidebyside:{
     flexDirection: 'row',
     justifyContent:'space-evenly',
-    marginTop:20,
+    marginTop:50,
     marginLeft:5,
     marginRight:30,
 },

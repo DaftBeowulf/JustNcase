@@ -122,8 +122,5 @@ export default createBottomTabNavigator({
   LoginStack,
   CreateStack,
   EventStack,
-  LinksStack,
-  SettingsStack,
   ProfileStack,
-  ContactsScreen,
 });
