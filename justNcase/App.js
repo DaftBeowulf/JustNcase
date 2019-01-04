@@ -17,6 +17,37 @@ export default class App extends React.Component {
       );}
   }
 
+<<<<<<< HEAD
+=======
+  _loadResourcesAsync = async () => {
+    return Promise.all([
+      Asset.loadAsync([
+        // require('./assets/png_icons/images/robot-dev.png'),
+        // require('./assets/png_icons/robot-prod.png'),
+
+      ]),
+      Font.loadAsync({
+        // This is the font that we are using for our tab bar
+        ...Icon.Ionicons.font,
+        // We include SpaceMono because we use it in HomeScreen.js. Feel free
+        // to remove this if you are not using it in your app
+        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+      }),
+    ]);
+  };
+
+  _handleLoadingError = error => {
+    // In this case, you might want to report the error to your error
+    // reporting service, for example Sentry
+    console.warn(error);
+  };
+
+  _handleFinishLoading = () => {
+    this.setState({ isLoadingComplete: true });
+  };
+}
+
+>>>>>>> e3c8c4aaabe50980717963a6b2cf6acc83a4bd68
 const styles = StyleSheet.create({
   container: {
     flex: 1,
