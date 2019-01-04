@@ -7,6 +7,7 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LoginScreen from '../screens/LoginScreen';
 import ProfileScreen from  '../screens/ProfileScreen';
+import ContactsScreen from '../screens/emergContacts';
 
 const LoginStack = createStackNavigator({
   Login: LoginScreen,
@@ -31,6 +32,20 @@ const LinksStack = createStackNavigator({
 
 LinksStack.navigationOptions = {
   tabBarLabel: 'Links',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+
+const EditContacts = createStackNavigator({
+  Contacts: ContactsScreen,
+});
+
+EditContacts.navigationOptions = {
+  tabBarLabel: 'Emergency Contacts',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -72,4 +87,5 @@ export default createBottomTabNavigator({
   LinksStack,
   SettingsStack,
   ProfileStack,
+  ContactsScreen,
 });

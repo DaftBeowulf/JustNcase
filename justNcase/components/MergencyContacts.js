@@ -4,13 +4,15 @@ import EcontactCard from './EcontactCard';
 
 class MergencyContacts extends React.Component{
     constructor(props){
-        super(props);
-  
     }
-
     render(){
     return(
         <View>
+    render(){
+    return(
+        <View>
+{/* <EcontactCard contact={this.props.user.contacts[0]}/> */}
+
                 {this.props.user.contacts.map(contact => {
                 return (<View key={contact._id}>
 

@@ -38,10 +38,10 @@ const EcontactCard = (props) =>{
                   Edit Contact  
                 </Text>
             </View>
-
         </View>
     )
 } 
+
 const styles=StyleSheet.create({
     contactsText:{
         fontSize:15,
