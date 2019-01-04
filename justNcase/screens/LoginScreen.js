@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import { NativeRouter, Route, Link } from "react-router-native";
+
+
 import FloatingLabel from '../screens/FloatingLabel';
 // import LoginButton from '../components/LoginButton';
 
