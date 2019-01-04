@@ -30,7 +30,9 @@ export default class LoginScreen extends React.Component {
       <Text style={{color:'black', marginLeft:185, marginTop: 0, fontSize:13}}>Forgot Username?</Text>
       <Image source={require('../assets/png_icons/padlock.png')} style={{aspectRatio:.6, resizeMode:'contain', marginLeft:262, marginTop: 1}}/>
       <Text style={{color:'black', marginLeft:185, marginTop: 3, fontSize:13}}>Forgot Password?</Text>
+      <Link to="/ProfileScreen">
       <Image source={require('../assets/png_icons/LoginButton.png')} style={{aspectRatio:1.5, resizeMode:'contain', marginLeft:85, marginTop: -15}}/>
+      </Link>
       <Image source={require('../assets/png_icons/google.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:75, marginTop:80}}/>
       <Image source={require('../assets/png_icons/Facebook.png')} style={{aspectRatio:2.5, resizeMode:'contain', marginLeft:75, marginTop:-10}}/>
       <Image source={require('../assets/png_icons/oval.png')} style={{aspectRatio:.8, resizeMode:'contain', marginLeft:125, marginTop: -235}}/>
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Chalkduster',
     textDecorationLine: 'underline',
     color: 'white',
-    fontSize:'35',
+    fontSize:35,
     marginLeft:10,
     marginRight:10,
     marginTop:10,

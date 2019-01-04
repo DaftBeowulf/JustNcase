@@ -7,12 +7,30 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LoginScreen from '../screens/LoginScreen';
 import ProfileScreen from  '../screens/ProfileScreen';
+import EventScreen from '../screens/EventScreen';
 
 const LoginStack = createStackNavigator({
   Login: LoginScreen,
 });
 LoginStack.navigationOptions = {
   tabBarLabel: 'Login',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-information-circle${focused ? '' : '-outline'}`
+          : 'md-information-circle'
+      }
+    />
+  ),
+};
+
+const EventStack = createStackNavigator({
+  Event: EventScreen,
+});
+EventStack.navigationOptions = {
+  tabBarLabel: 'Event',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -69,6 +87,7 @@ ProfileStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   LoginStack,
+  EventStack,
   LinksStack,
   SettingsStack,
   ProfileStack,
