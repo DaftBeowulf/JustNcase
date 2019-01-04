@@ -44,7 +44,7 @@ export default class App extends React.Component {
   _handleFinishLoading = () => {
     this.setState({ isLoadingComplete: true });
   };
-}
+
 
 const styles = StyleSheet.create({
   container: {

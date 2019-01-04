@@ -15,7 +15,7 @@ export default class FloatingLabel extends Component {
             </Item>
             <Item floatingLabel last>
               <Label>Password</Label>
-              <Input secureTextEntry='true' />
+              <Input secureTextEntry={true} />
             </Item>
           </Form>
         </Content>

@@ -70,7 +70,7 @@ headerText:{
 },
 secondText:{
     color:'#4A4A4A',
-    fontFamily:'SF Pro Tex',
+    // fontFamily:'SF Pro Tex',
     marginTop:15,
     fontSize:12,
 },
@@ -81,8 +81,8 @@ fancyCard:{
     marginTop:10,
     position:'relative',
     backgroundColor:'white',
-    borderRadius:'2',
-    borderWidth:'0.5',
+    borderRadius:2,
+    borderWidth:0.5,
     borderColor:'#1EB865',
     opacity:.5,
     backgroundColor:'white'
