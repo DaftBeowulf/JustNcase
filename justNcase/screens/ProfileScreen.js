@@ -21,7 +21,7 @@ export default class ProfileScreen extends React.Component{
            isUser: false,
         }
     }
-    componentDidMount=()=>{
+    componentWillMount=()=>{
         axios.get('https://justncase.now.sh/user/lambdajoe')
         .then(response=>{
             this.setState({
@@ -61,7 +61,7 @@ export default class ProfileScreen extends React.Component{
                     </View>
                      
                     <View style={styles.smallText}>
-                       <Text>Emergency Contacts  </Text> 
+                       <Text style={{marginLeft:10,}}>Emergency Contacts  </Text> 
                        <Text>Manage List</Text>
                     </View >
                     <View>
