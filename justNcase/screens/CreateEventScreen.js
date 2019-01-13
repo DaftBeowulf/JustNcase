@@ -36,10 +36,13 @@ createEventHandler() {
     })
     .then(res => {
         console.debug(res.data);
-        () => this.props.navigation.navigate("Event");
     })
     .catch(err => console.debug(err));
+this.navigateToEventScreen();
+}
 
+navigateToEventScreen = () => {
+    this.props.navigation.navigate("Event")
 }
     render(){
     return(
@@ -70,7 +73,7 @@ createEventHandler() {
                 </View>
             </View>
             <View style={styles.sidebyside}>
-            <TouchableWithoutFeedback onPress={()=> this.createEventHandler()}>
+            <TouchableWithoutFeedback onPress={()=> this.createEventHandler()} >
             <Image source={require('../assets/png_icons/createEventButton.png')} style={{ height:60, width:400, resizeMode:'contain', marginTop:20}} />
             </TouchableWithoutFeedback>
             <Image source={require('../assets/png_icons/cancelbutton.png')} style={{ height:60, width:400,resizeMode:'contain', marginTop:40}} />
@@ -124,7 +127,7 @@ fancyCard:{
 },
 sidebyside:{
     flexDirection: 'column',
-    alignContent:'space-evenly',
+    alignContent:'space-around',
     marginTop:60,
     // marginLeft:5,
     // marginRight:30,
