@@ -6332,7 +6332,7 @@ react-native-drawer@2.5.1:
     prop-types "^15.5.8"
     tween-functions "^1.0.1"
 
-react-native-easy-grid@0.2.0:
+react-native-easy-grid@0.2.0, react-native-easy-grid@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/react-native-easy-grid/-/react-native-easy-grid-0.2.0.tgz#4718031aa1baaa2613b829fc807da288eb0d2797"
   dependencies:
