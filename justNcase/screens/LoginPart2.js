@@ -13,7 +13,7 @@ import { material } from "react-native-typography";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Button from "apsl-react-native-button";
 
-export default class NewLoginScreen extends React.Component {
+export default class EnterLoginInfo extends React.Component {
   static navigationOptions = {
     header: null
   };
@@ -36,21 +36,17 @@ export default class NewLoginScreen extends React.Component {
             <Image
               source={require("../assets/png_icons/logo.png")}
               style={{
-                aspectRatio: 1.7,
+                aspectRatio: 6,
                 resizeMode: "contain",
-                // justifyContent: "center",
                 left: "15%",
                 top: "0%",
                 opacity: 0.7
               }}
             />
+            <View>
+
+            </View>
             <View style={styles.buttons}>
-            <Button
-              style={{ backgroundColor: "transparent", borderColor:"white", borderRadius:20}}
-              textStyle={{ fontSize: 16, color: "white", fontWeight:"600" }}
-            >
-              SIGN UP
-            </Button>
             <Button
               style={{ backgroundColor: "white", borderRadius:20, borderColor:"transparent", opacity:.9, marginTop:10 }}
               textStyle={{ fontSize: 16, color: "#0B3835", opacity:.95, fontWeight:"600" }}

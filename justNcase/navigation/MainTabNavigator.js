@@ -11,6 +11,7 @@ import EventScreen from '../screens/EventScreen';
 import CreateEventScreen from '../screens/CreateEventScreen';
 import ContactsScreen from '../screens/emergContacts';
 import NewLoginScreen from '../screens/NewLogin';
+import EnterLoginInfo from '../screens/LoginPart2';
 
 const LoginStack = createStackNavigator({
   Login: LoginScreen,
@@ -34,6 +35,23 @@ const LoginStack2 = createStackNavigator({
 });
 LoginStack2.navigationOptions = {
   tabBarLabel: 'New Login',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      // name={
+      //   Platform.OS === 'ios'
+      //     ? `ios-information-circle${focused ? '' : '-outline'}`
+      //     : 'md-information-circle'
+      // }
+    />
+  ),
+};
+
+const LoginStack3 = createStackNavigator({
+  Login: EnterLoginInfo,
+});
+LoginStack3.navigationOptions = {
+  tabBarLabel: 'Enter LoginInfo',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -138,6 +156,7 @@ ProfileStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   LoginStack2,
+  LoginStack3,
   CreateStack,
   EventStack,
   ProfileStack,
