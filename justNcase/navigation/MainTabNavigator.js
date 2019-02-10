@@ -137,7 +137,6 @@ ProfileStack.navigationOptions = {
 
 
 export default createBottomTabNavigator({
-  LoginStack,
   LoginStack2,
   CreateStack,
   EventStack,
