@@ -20,6 +20,7 @@
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-easy-grid": "^0.2.0",
+    "react-native-phone-input": "^0.2.1",
     "react-native-typography": "^1.4.0",
     "react-navigation": "^2.18.2",
     "react-router-native": "^4.3.0",
