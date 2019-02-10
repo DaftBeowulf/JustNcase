@@ -13,6 +13,7 @@ import { material } from "react-native-typography";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Button from "apsl-react-native-button";
 
+
 export default class EnterLoginInfo extends React.Component {
   static navigationOptions = {
     header: null
@@ -44,7 +45,7 @@ export default class EnterLoginInfo extends React.Component {
               }}
             />
             <View>
-
+              
             </View>
             <View style={styles.buttons}>
             <Button

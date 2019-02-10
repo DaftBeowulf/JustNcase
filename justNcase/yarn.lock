@@ -3663,7 +3663,7 @@ hoist-non-react-statics@^1.0.5:
   version "1.2.0"
   resolved "http://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
-hoist-non-react-statics@^2.2.0, hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
+hoist-non-react-statics@^2.0.0, hoist-non-react-statics@^2.2.0, hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
 
@@ -6435,6 +6435,14 @@ react-native-tab-view@^1.0.0:
 react-native-typography@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-native-typography/-/react-native-typography-1.4.0.tgz#166b79c618075882d8af07720649f5bc6523160d"
+
+react-native-ui-kitten@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-ui-kitten/-/react-native-ui-kitten-3.1.2.tgz#7d0c771102be4e02d9ad3b18154aeb98bbd70451"
+  dependencies:
+    hoist-non-react-statics "^2.0.0"
+    lodash "4.17.10"
+    prop-types "^15.5.10"
 
 react-native-vector-icons@6.0.0:
   version "6.0.0"
