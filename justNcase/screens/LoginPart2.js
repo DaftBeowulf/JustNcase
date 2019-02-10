@@ -36,9 +36,9 @@ export default class EnterLoginInfo extends React.Component {
             <Image
               source={require("../assets/png_icons/logo.png")}
               style={{
-                aspectRatio: 6,
+                aspectRatio: 2,
                 resizeMode: "contain",
-                left: "15%",
+                left: "6%",
                 top: "0%",
                 opacity: 0.7
               }}
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   buttons:{
       position:"absolute",
       top:"65%",
-      left:"15%",
+      left:"6%",
       width:"95%",
   }
 });
