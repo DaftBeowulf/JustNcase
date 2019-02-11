@@ -8,6 +8,9 @@ import FloatingLabel from '../screens/FloatingLabel';
 // import LoginButton from '../components/LoginButton';
 
 export default class LoginScreen extends React.Component {
+  static navigationOptions = {
+    header: null
+}
   render() {
     return (
       // <View style={styles.container}>
